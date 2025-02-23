@@ -131,8 +131,8 @@
         <label id="label1">
             <br> Elizabete Bojaruneca, Will you please become my dear friend?
         </label>
-       
-        
+        <br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <button id="yesbtn">
             Yes
         </button>
@@ -277,16 +277,27 @@
             }
         }
 
+        nobtn.onclick = function () {
+            aw.play();
+            if (nobtn.innerHTML.trim() === "No") {
+                nobtn.style.backgroundColor = "transparent";
+                nobtn.style.borderColor = "lightgreen";
+                nobtn.innerHTML = "I mean yes";
+                nobtn.style.color = "lightgreen";
+            } else if (nobtn.innerHTML.trim() === "I mean yes") {
+                aw.pause();
+                yay.play()
+                agreementdiv.style.display = "none";
+                document.getElementById("div1").style.display = "block";
+                nextbtn.style.display = "block";
+            }
+        };
+
         yesbtn.onclick = function () {
             yay.play();
             agreementdiv.style.display = "none";
             document.getElementById("div1").style.display = "block";
-        };
-
-        nobtn.onclick = function () {
-            aw.play(); 
-            agreementdiv.style.display = "none";
-            document.getElementById("div1").style.display = "block";
+            nextbtn.style.display = "block";
         };
     </script>
 </body>

@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liza</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        #lizatxt {
+            color: gold;
+            font-size: 5em;
+            padding-bottom: 50px; /* Ensure there's space for the Next button */
+            max-width: 10%; /* Prevent text overflow */
+            overflow-wrap: break-word;
+        }
+        #nextbtn {
+            display: block;
+            font-size: 3em;
+            padding: 25px 100px;
+            background-color: transparent;
+            color: pink;
+            border-style: solid;
+            border-color: pink;
+            position: relative;
+            width: 50%;
+            margin-top: 20px;
+        }
+        #div1 {
+            display: block;
+            margin-top: 70%;
+        }
+        #rulesdiv, #agreementdiv {
+            display: block;
+            background-color: transparent;
+            height: 50vh;
+            width: 100%;
+            border-color: gold;
+            border-style: solid;
+            border-radius: 5px;
+            border-width: 5px;
+            margin-top: 20%;
+            text-align: start;
+            display: none;
+        }
+        #agreementdiv {
+            display: block;
+            text-align: center;
+            display: none;
+        }
+        #label1 {
+            color: gold;
+            font-size: 4em;
+        }
+        #span1 {
+            font-size: 3em;
+            text-align: start;
+            color: white;
+        }
+        #labeldiv {
+            text-align: center;
+        }
+        #yesbtn {
+            width: 40vw;
+            height: 4vh;
+            font-size: 4em;
+            color: lightgreen;
+            background-color: transparent;
+            border-color: lightgreen;
+            border-style: solid;
+            margin: 10px;
+            transition: 0.2s;
+        }
+        #nobtn {
+            width: 40vw;
+            height: 4vh;
+            font-size: 4em;
+            color: red;
+            background-color: transparent;
+            border-color: red;
+            border-style: solid;
+            margin: 10px;
+            transition: 0.2s;
+        }
+        #yesbtn:hover {
+            background-color: lightgreen;
+            color: black;
+        }
+    </style>
+
+    <audio id="typingSound" src="https://raw.githubusercontent.com/alexeylizafriends/new/main/sound.mp3" preload="auto"></audio>
+    <audio id="awsound" src="https://raw.githubusercontent.com/alexeylizafriends/new/main/aw.mp3" preload="auto"></audio>
+    <audio id="yaysound" src="https://raw.githubusercontent.com/alexeylizafriends/new/main/yay.mp3" preload="auto"></audio>
+
+    <div id="div1">
+        <label id="lizatxt">Hey The liza</label> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <div id="rulesdiv">
+        <div id="labeldiv">
+            <label id="label1">Rules, For liza & alex [Friendship]</label>
+        </div>
+        <br><br>
+        <span id="span1">
+            Rule 1: <br> Goodmorning, Goodnight texts without hearts
+            <br>
+            Rule 2: <br> No flirting, no heart emojis, no e-sex
+            <br>
+            Rule 3: <br> I still get the birthday gift <br>
+            Rule 4: <br> Whoever gets too close, gets 2 hours timeout, meaning be muted for 2 hours and ignored
+            <br>
+            Rule 5: <br> No dick for liza, No pussy for me, NO E SEX AT ALL! <br>
+            Rule 6: <br> You can press next idk anymore rules
+        </span>
+    </div>
+    <div id="agreementdiv">
+        <label id="label1">
+            <br> Elizabete Bojaruneca, Will you please become my dear friend?
+        </label>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+        <button id="yesbtn">
+            Yes
+        </button>
+        <button id="nobtn">
+            No
+        </button>
+    </div>
+    <br><br>
+    <button id="nextbtn">Next</button>
+
+    <script>
+        let texts = [
+            "Hello the liza",
+            "I'm sorry, you raged again earlier and it was my fault",
+            "I promised to not text you anymore and I failed because of jealousy",
+            "I look like such an idiot promising you the same thing over and over again",
+            "To leave you alone.",
+            "I'm sorry but I just can't",
+            "And I guess you will have to live with that",
+            "We both have to accept one thing",
+            "For me it is that you want to move on from me",
+            "And for you it is that I won't leave you alone until I moved on myself",
+            "So with that being said, ",
+            "I can't leave you alone until your absence doesn't bother me anymore",
+            "And that will probably take a lot of time",
+            "I'm not like you I can't ignore my feelings",
+            "Even tho I'm a guy and you're a girl I'm acting more like the girl",
+            "I saw a tiktok about that too weeks ago and It said it's because ADHD ppl are more sensitive to feelings 💀",
+            "If that's true then I'm cooked",
+            "Anyway",
+            "I don't know if you opened the website I sent you yesterday",
+            "But I hope you did not because it should only be opened march 3rd on our anniversary",
+            "Okay anyways",
+            "Liza",
+            "I can't leave you alone",
+            "Not until it doesn't bother me anymore",
+            "And that is something you have to live with",
+            "You were together with a guy that is obsessed, and childish and cant leave you alone",
+            "Yea, we would still be together if I didnt do what I did and I know all of this is my fault",
+            "Even now that you say that I dont control your life anymore,",
+            "And that I mean nothing to you anymore, Which I dont know what you meant by that,",
+            "Either it is that You dont Love me anymore and you Just want me gone",
+            "Or it's that our relationship means nothing to you anymore",
+            "I don't know if the things you said to me were because you just wanted me to block you",
+            "And to hate you, but if you really mean that you allow other guys to follow you because why not then",
+            "Theres nothing I can do because its all my faullt",
+            "If you will never be with me again, then that is my fault",
+            "I should've thought about that before doing what I did",
+            "I'm sorry liza",
+            "I regret Literally every single thing I've done since our breakup",
+            "I should have just left you alone and not bother you and let you miss me",
+            "And let you alone and no pressure at all instead of all of this",
+            "And the reason I keep doing it is because now I know, it has gotten to a point where",
+            "It is just annoying for you and if I don't text you anymore then you won't miss me",
+            "And you will just continue to move on with your life and thats why",
+            "I am trying to convince you to become my friend",
+            "I know, I'm such a pussy for this",
+            "I've seen tiktoks, even reposted, that I would never become friends with my ex",
+            "But I cannot help myself",
+            "I can't stand it not being in touch with you",
+            "And its been 2 whole months, and You said no to me probably 1000 times",
+            "And now i've gotten to a point where I want to move on myself",
+            "But not stop being in touch with you",
+            "Yesterday, I promised to leave you alone and I failed to do that",
+            "Because I want to text you",
+            "I want to for real be friends with you",
+            "I know I said it before, but I always forgot that I want that because of our flirting convos",
+            "And Because of that I want to set up a few rules",
+            "So we for real just stay friends and nothing else, and we don't get distracted again",
+            "Because if we get distracted again, you will flirt with me and then you'll regret it, and be drier",
+            "And then I will be mad again and spam you and then you will rage again and block me",
+            "And I will keep making something to convince you to be friends again and then the whole thing will repeat",
+            "So, I've come up with rules. Strict rules. That We will follow so we both can move on and stay friends",
+            "Because, I cannot, and I refuse to stay blocked by you",
+            "So until I have moved on I will not stop bothering you and I wont stop do you understand?",
+            "Here are the rules:",
+            "...",
+            "Okay good, You read the rules",
+            "Now I need your agreement.",
+            "Click next to Proceed, btw, there will be a next button, dont press it if you see it because",
+            "This code is complicated with the typing effect that I got confused and I can't read the code anymore 😂",
+            "So just don't press it when you see it and just Press yes or no",
+            "Okay, Proceed silly.",
+            "....",
+            "Thank you",
+            "You now agreed to be friends with me, having those strict rules to ensure that we stay friends, and nothing more",
+            "Just so there is no confusion:",
+            "I love you, but it is clear that we will never be in a relationship due to what happened",
+            "And like I said, We both need to accept one thing,",
+            "For you it is that I won't leave you alone until I move on",
+            "And for me it is that our love wont get a second chance and we HAVE to move on",
+            "Thank you for taking your time and reading everything, my friend"
+        ];
+
+        let index = 0;
+        let nextbtn = document.getElementById("nextbtn");
+        let lizatxt = document.getElementById("lizatxt");
+        let rulesdiv = document.getElementById("rulesdiv");
+        let nobtn = document.getElementById("nobtn");
+        let yesbtn = document.getElementById("yesbtn");
+        let agreementdiv = document.getElementById("agreementdiv");
+        let aw = document.getElementById("awsound");
+        let yay = document.getElementById("yaysound");
+
+        function typeText(element, text, speed = 20) {
+            element.innerHTML = ""; 
+            let i = 0;
+            let sound = document.getElementById("typingSound");
+            sound.play(); 
+            nextbtn.style.display = "none";
+            function typing() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                } else {
+                    sound.pause();  
+                    sound.currentTime = 0; 
+                    nextbtn.style.display = "block"; // Show nextbtn after typing is done
+                }
+            }
+            typing();
+        }
+
+        nextbtn.onclick = function () {
+            index = (index + 1) % texts.length;
+            typeText(lizatxt, texts[index]);
+
+            if (texts[index] === "...") {
+                document.getElementById("div1").style.display = "none";
+                rulesdiv.style.display = "block";
+                nextbtn.style.display="none"
+            } else if (rulesdiv.style.display === "block") {
+                rulesdiv.style.display = "none";
+                document.getElementById("div1").style.display = "block";
+            } else if (texts[index] === "....") {
+                document.getElementById("div1").style.display = "none";
+                agreementdiv.style.display = "block";
+                nextbtn.style.display = "none";
+            } else if (texts[index] === "Thank you for taking your time and reading everything, my friend") {
+                nextbtn.style.display = "none";
+            }
+        };
+
+        nobtn.onclick = function () {
+            aw.play();
+            if (nobtn.innerHTML.trim() === "No") {
+                nobtn.style.backgroundColor = "transparent";
+                nobtn.style.borderColor = "lightgreen";
+                nobtn.innerHTML = "I mean yes";
+                nobtn.style.color = "lightgreen";
+            } else if (nobtn.innerHTML.trim() === "I mean yes") {
+                aw.pause();
+                yay.play()
+                agreementdiv.style.display = "none";
+                document.getElementById("div1").style.display = "block";
+                nextbtn.style.display = "block";
+            }
+        };
+
+        yesbtn.onclick = function () {
+            yay.play();
+            agreementdiv.style.display = "none";
+            document.getElementById("div1").style.display = "block";
+            nextbtn.style.display = "block";
+        };
+    </script>
+</body>
+</html>

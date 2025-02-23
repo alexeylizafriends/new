@@ -38,7 +38,6 @@
         #div1 {
             display: block;
             margin-top: 15vh;
-            display: none;
         }
         #rulesdiv, #agreementdiv {
             display: block;
@@ -55,7 +54,7 @@
         }
         #agreementdiv {
             text-align: center;
-            display: block;
+            display: none;
         }
         #label1 {
             color: gold;
@@ -131,7 +130,7 @@
         <label id="label1">
             <br> Elizabete Bojaruneca, Will you please become my dear friend?
         </label>
-        <br><br><br><br><br> <br><br>
+        <br><br><br><br><br> <br><br><br>
         <button id="yesbtn">
             Yes
         </button>
@@ -241,7 +240,7 @@
             let i = 0;
             let sound = document.getElementById("typingSound");
             sound.play(); 
-           
+            nextbtn.style.display = "none";
             function typing() {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);

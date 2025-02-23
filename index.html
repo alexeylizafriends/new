@@ -3,8 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liza</title>
-</head>
-<body>
     <style>
         body {
             background-color: black;
@@ -14,88 +12,104 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            margin: 0;
+            padding: 0;
         }
         #lizatxt {
             color: gold;
-            font-size: 5em;
-            padding-bottom: 50px; /* Ensure there's space for the Next button */
-            max-width: 10%; /* Prevent text overflow */
+            font-size: 4vw; /* Responsive font size */
+            padding-bottom: 5vh; /* Ensure there's space for the Next button */
+            max-width: 90%; /* Prevent text overflow */
             overflow-wrap: break-word;
         }
         #nextbtn {
             display: block;
-            font-size: 3em;
-            padding: 25px 100px;
+            font-size: 6vw; /* Responsive font size */
+            padding: 3vh 12vw;
             background-color: transparent;
             color: pink;
             border-style: solid;
             border-color: pink;
             position: relative;
             width: 50%;
-            margin-top: 20px;
+            margin-top: 3vh;
+            cursor: pointer;
         }
         #div1 {
             display: block;
-            margin-top: 70%;
+            margin-top: 15vh;
         }
         #rulesdiv, #agreementdiv {
             display: block;
             background-color: transparent;
-            height: 50vh;
-            width: 100%;
+            height: 40vh; /* Adjusted height for mobile scaling */
+            width: 90%;
             border-color: gold;
             border-style: solid;
             border-radius: 5px;
             border-width: 5px;
-            margin-top: 20%;
+            margin-top: 10%;
             text-align: start;
             display: none;
+            padding: 3%;
+            box-sizing: border-box;
         }
         #agreementdiv {
-            display: block;
             text-align: center;
             display: none;
         }
         #label1 {
             color: gold;
-            font-size: 4em;
+            font-size: 4vw; /* Responsive font size */
         }
         #span1 {
-            font-size: 3em;
+            font-size: 3vw; /* Responsive font size */
             text-align: start;
             color: white;
         }
         #labeldiv {
             text-align: center;
         }
-        #yesbtn {
-            width: 40vw;
-            height: 4vh;
-            font-size: 4em;
+        #yesbtn, #nobtn {
+            width: 80vw;
+            height: 8vh;
+            font-size: 4vw; /* Responsive font size */
             color: lightgreen;
             background-color: transparent;
             border-color: lightgreen;
             border-style: solid;
-            margin: 10px;
+            margin: 2vh;
             transition: 0.2s;
+            cursor: pointer;
         }
-        #nobtn {
-            width: 40vw;
-            height: 4vh;
-            font-size: 4em;
-            color: red;
-            background-color: transparent;
-            border-color: red;
-            border-style: solid;
-            margin: 10px;
-            transition: 0.2s;
-        }
-        #yesbtn:hover {
+        #yesbtn:hover, #nobtn:hover {
             background-color: lightgreen;
             color: black;
         }
-    </style>
 
+        /* Media Query for Samsung Galaxy A54 5G */
+        @media only screen and (max-width: 412px) { /* Max-width for Galaxy A54 5G (412px wide) */
+            #lizatxt {
+                font-size: 5vw;
+                padding-bottom: 10vh;
+            }
+            #nextbtn {
+                font-size: 7vw;
+                padding: 4vh 14vw;
+            }
+            #rulesdiv, #agreementdiv {
+                height: 50vh;
+                width: 85%;
+            }
+            #yesbtn, #nobtn {
+                font-size: 5vw;
+                width: 75vw;
+                height: 10vh;
+            }
+        }
+    </style>
+</head>
+<body>
     <audio id="typingSound" src="https://raw.githubusercontent.com/alexeylizafriends/new/main/sound.mp3" preload="auto"></audio>
     <audio id="awsound" src="https://raw.githubusercontent.com/alexeylizafriends/new/main/aw.mp3" preload="auto"></audio>
     <audio id="yaysound" src="https://raw.githubusercontent.com/alexeylizafriends/new/main/yay.mp3" preload="auto"></audio>
@@ -266,31 +280,20 @@
                 agreementdiv.style.display = "block";
                 nextbtn.style.display = "none";
             } else if (texts[index] === "Thank you for taking your time and reading everything, my friend") {
-                nextbtn.style.display = "none";
+                yay.play(); 
             }
-        };
-
-        nobtn.onclick = function () {
-            aw.play();
-            if (nobtn.innerHTML.trim() === "No") {
-                nobtn.style.backgroundColor = "transparent";
-                nobtn.style.borderColor = "lightgreen";
-                nobtn.innerHTML = "I mean yes";
-                nobtn.style.color = "lightgreen";
-            } else if (nobtn.innerHTML.trim() === "I mean yes") {
-                aw.pause();
-                yay.play()
-                agreementdiv.style.display = "none";
-                document.getElementById("div1").style.display = "block";
-                nextbtn.style.display = "block";
-            }
-        };
+        }
 
         yesbtn.onclick = function () {
             yay.play();
             agreementdiv.style.display = "none";
             document.getElementById("div1").style.display = "block";
-            nextbtn.style.display = "block";
+        };
+
+        nobtn.onclick = function () {
+            aw.play(); 
+            agreementdiv.style.display = "none";
+            document.getElementById("div1").style.display = "block";
         };
     </script>
 </body>

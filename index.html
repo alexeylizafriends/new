@@ -13,18 +13,18 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
-            padding: 0;
+            padding: 10px;
         }
         #lizatxt {
             color: gold;
-            font-size: 4vw; /* Responsive font size */
-            padding-bottom: 5vh; /* Ensure there's space for the Next button */
-            max-width: 90%; /* Prevent text overflow */
+            font-size: 4vw; 
+            padding-bottom: 5vh;
+            max-width: 90%;
             overflow-wrap: break-word;
         }
         #nextbtn {
             display: block;
-            font-size: 6vw; /* Responsive font size */
+            font-size: 6vw; 
             padding: 3vh 12vw;
             background-color: transparent;
             color: pink;
@@ -42,7 +42,7 @@
         #rulesdiv, #agreementdiv {
             display: block;
             background-color: transparent;
-            height: 40vh; /* Adjusted height for mobile scaling */
+            height: 40vh; 
             width: 90%;
             border-color: gold;
             border-style: solid;
@@ -60,10 +60,10 @@
         }
         #label1 {
             color: gold;
-            font-size: 4vw; /* Responsive font size */
+            font-size: 4vw; 
         }
         #span1 {
-            font-size: 3vw; /* Responsive font size */
+            font-size: 3vw; 
             text-align: start;
             color: white;
         }
@@ -73,7 +73,7 @@
         #yesbtn, #nobtn {
             width: 80vw;
             height: 8vh;
-            font-size: 4vw; /* Responsive font size */
+            font-size: 4vw; 
             color: lightgreen;
             background-color: transparent;
             border-color: lightgreen;
@@ -87,8 +87,8 @@
             color: black;
         }
 
-        /* Media Query for Samsung Galaxy A54 5G */
-        @media only screen and (max-width: 412px) { /* Max-width for Galaxy A54 5G (412px wide) */
+        
+        @media only screen and (max-width: 412px) { 
             #lizatxt {
                 font-size: 5vw;
                 padding-bottom: 10vh;
@@ -258,7 +258,7 @@
                 } else {
                     sound.pause();  
                     sound.currentTime = 0; 
-                    nextbtn.style.display = "block"; // Show nextbtn after typing is done
+                    nextbtn.style.display = "block";
                 }
             }
             typing();

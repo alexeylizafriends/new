@@ -42,17 +42,15 @@
         #rulesdiv, #agreementdiv {
             display: block;
             background-color: transparent;
-            height: 40vh; 
+            height: 40vh;
             width: 90%;
             border-color: gold;
             border-style: solid;
             border-radius: 5px;
             border-width: 5px;
-            margin-top: 10%;
+            margin-top: 20%;
             text-align: start;
             display: none;
-            padding: 3%;
-            box-sizing: border-box;
         }
         #agreementdiv {
             text-align: center;
@@ -70,43 +68,35 @@
         #labeldiv {
             text-align: center;
         }
-        #yesbtn, #nobtn {
-            width: 80vw;
-            height: 8vh;
-            font-size: 4vw; 
+        #yesbtn {
+            width: 40vw;
+            height: 4vh;
+            font-size: 4em;
             color: lightgreen;
             background-color: transparent;
             border-color: lightgreen;
             border-style: solid;
-            margin: 2vh;
+            margin: 10px;
             transition: 0.2s;
-            cursor: pointer;
         }
-        #yesbtn:hover, #nobtn:hover {
+        #nobtn {
+            width: 40vw;
+            height: 4vh;
+            font-size: 4em;
+            color: red;
+            background-color: transparent;
+            border-color: red;
+            border-style: solid;
+            margin: 10px;
+            transition: 0.2s;
+        }
+        #yesbtn:hover {
             background-color: lightgreen;
             color: black;
         }
 
         
-        @media only screen and (max-width: 412px) { 
-            #lizatxt {
-                font-size: 5vw;
-                padding-bottom: 10vh;
-            }
-            #nextbtn {
-                font-size: 7vw;
-                padding: 4vh 14vw;
-            }
-            #rulesdiv, #agreementdiv {
-                height: 50vh;
-                width: 85%;
-            }
-            #yesbtn, #nobtn {
-                font-size: 5vw;
-                width: 75vw;
-                height: 10vh;
-            }
-        }
+
     </style>
 </head>
 <body>
@@ -139,7 +129,6 @@
             <br> Elizabete Bojaruneca, Will you please become my dear friend?
         </label>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
         <button id="yesbtn">
             Yes
         </button>
@@ -249,7 +238,7 @@
             let i = 0;
             let sound = document.getElementById("typingSound");
             sound.play(); 
-            nextbtn.style.display = "none";
+           
             function typing() {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);
